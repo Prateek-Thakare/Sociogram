@@ -1,0 +1,10 @@
+
+<% comments.each do |comment| %>
+    <div class="comment">
+        <%=link_to profile_picture_thumb(comment.account), profile_path(comment.account.username)%>
+        <strong><%= link_to comment.account.username,profile_path(comment.account.username) %></strong>
+        <%= comment.comment %>
+        <p class = "text-muted m-l-40" style="font-size: 13px">
+        <%= time_ago_in_words comment.created_at%> ago </p>
+    </div>
+<% end %>

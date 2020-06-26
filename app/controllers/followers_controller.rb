@@ -1,0 +1,4 @@
+class FollwersController <  ApplicationController
+    
+
+end

@@ -1,0 +1,31 @@
+<div class="container" style="max-width: 700px !important; text-align: center; padding: 20px"><h4>Your Followers</h4></div>
+<div class="container main-container scroller">
+    <% @my_followers.each do |follower|%>
+                <% @account = Account.find_by_id(follower.follower_id)%>
+                <% if !@account.nil? && !@account.username.nil?%>
+                    <div class="container post-details follower-list put-shadow">
+                        <div class="row" > 
+                            <div class="col-sm-3 col-lg-2">
+                                <%=link_to profile_picture(@account,40), profile_path(@account.username)  %>
+                            </div>
+                            <div class="col-sm-9 col-lg-10">
+                                    <% if Follower.where(following_id: follower.follower_id,follower_id: follower.following_id).empty?%>
+                                        <%= form_tag follow_account_path, method: :post, class: "float-right" do %>
+                                            <%= hidden_field_tag :follow_id, @account.id %>
+                                            <%= submit_tag "Follow", class: "btn btn-info btn-sm"%>
+                                        <% end %>
+                                    <%else%>
+                                        <%=  form_tag unfollow_account_path, method: :post, class: "float-right" do %>
+                                            <%= hidden_field_tag :follow_id, @account.id %>
+                                            <%= submit_tag "Unfollow", class: "btn btn-info btn-danger  "%>
+                                        <% end %>
+                                    <% end %>
+                                <%= link_to @account.username, profile_path(@account.username), class: "text-dark"%> 
+                                <p class="text-muted"><%= @account.full_name%></p>   
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            
+    <%end%>
+</div>

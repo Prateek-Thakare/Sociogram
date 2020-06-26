@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4",style="align-content: center">
+        <%= profile_picture @account, 200 %>
+        </div>
+            <div class="col-8 text-left">
+                <div class="row">
+                    <div class="col-6">
+                        <%= link_to "Edit Profile", edit_account_registration_path, class: "btn btn-muted btn-custom float-right" if can_edit_profile?(@account.id)%>
+                        <h1><%= @account.full_name%></h1>
+                    </div>
+                </div>
+                <div class="row profile-stats">
+                    <div class= "col-4">
+                        <%= @account.posts.count%> Posts
+                    </div>
+                    <div class= "col-4">
+                        <%= @account.total_followers%> 
+                        <% if @account.total_followers>0%>
+                            <%= link_to show_followers_path(@account.id) do %>
+                                Followers
+                            <% end %>
+                        <% else %>
+                            Followers
+                        <% end %>
+                    </div>
+                    <div class= "col-4">
+                        <%= @account.total_following %> 
+                        <% if @account.total_following>0%>
+                            <%= link_to show_following_path(@account.id) do %>
+                                Following
+                            <% end %>
+                        <% else %>
+                            Following
+                        <% end %>
+                    </div>
+                </div>
+                <p><%= @account.full_name%> </p>
+                <%= simple_format @account.description%>
+                <p><%= link_to @account.website if @account.website.present?%> </p>
+
+            </div>
+    </div>
+
+            <div class="row profile">
+            
+                <% @posts.each do |post| %>
+                    <div class="col-4">
+                        <div class="insta-post post-square put-shadow", style="background: url(<%= post.image.url%>) no-repeat center top">
+                            <%= link_to post_path(post) do  %>
+                                <div class="post-stats">
+                                    <div class="inner">
+                                        <i class="fa fa-heart"></i> <%= post.total_likes_count%> 
+                                        <i class="fa fa-comment m-l-15"></i> <%= post.total_comments_count%>
+                                    </div>
+                                </div>
+                            <%end%>
+                        </div>
+                    </div>
+                <%end%>
+            </div>
+        </div>

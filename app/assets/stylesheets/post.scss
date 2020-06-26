@@ -1,0 +1,148 @@
+.insta-post{
+    margin-bottom: 15px;
+    
+    
+
+}
+.post-image{
+    
+}
+.post-meta {
+    background: white;
+    text-align: left;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #dddddd;
+
+    img{
+        margin-right: 10px;
+    }
+}
+
+.post-details{
+    background: white;
+    padding: 10px;
+    border: solid 1px #dddddd;
+}
+
+.post-actions{
+    margin-bottom: 20px;
+    i{
+        margin-right: 10px;
+        color: #dddddd;
+        cursor: pointer;
+     }
+     i:hover{
+         color: #999999;
+     }
+
+   i.active{
+       color: red;
+   }
+
+}
+
+
+.comment-box{
+    
+    padding: 15px;
+    background: #ffffff;
+    border: solid 1px #dddddd;
+    
+}
+
+
+.post-comment{
+    box-shadow: none !important;
+}
+
+.comments-feed{
+    height: 250px;
+    scrollbar-width: none !important;    
+    overflow: scroll;
+}
+
+    
+
+
+.post-details .post-actions{
+    border: 1px ;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+
+.post-stats{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+    color: #ffffff;
+    display: none;
+    .inner{
+        padding-top: 45%;
+    }
+}
+
+.insta-post:hover{
+    .post-stats{
+        
+        display: block;
+    }
+}
+.post-square{
+    height: 290px;
+    width: 290px;
+    overflow: hidden;
+    background-size: cover !important;
+}
+
+.m-l-40{
+    margin-left: 40px;
+}
+.comment-section{
+    
+    .comment:nth-child(n+3){
+        display: none;
+    }
+}
+
+.desc{
+    overflow-wrap: break-word;
+}
+
+.follower-list{
+
+    max-width: 700px !important;
+    max-height: 70px;
+    margin-top: 10px;
+    
+   
+}
+
+.put-shadow{
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+  .put-shadow:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+  }
+  
+  .put-shadow:hover::after {
+    opacity: 1;
+  }
+
+
+.main-container{
+    scrollbar-width: none !important; 
+    overflow: scroll; 
+    max-height: 400px;
+
+}
+
+.suggestions{
+    .recommended-follower:nth-child(n+6){
+        display: none;
+    }
+}
