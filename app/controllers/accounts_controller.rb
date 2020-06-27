@@ -6,7 +6,11 @@ class AccountsController < ApplicationController
         #show posts
         followers_ids = Follower.where(follower_id: current_account.id).map(&:following_id)
         # followers_ids << current_account.id
-        @posts = Post.includes(:account).where(account_id: followers_ids).active
+        @posts = Post.paginate(:page => params[:page], :per_page => 2).where(account_id: followers_ids).active
+        respond_to do |format|
+            format.html
+            format.js
+        end
         @comment = Comment.new
         following_ids = Follower.where(follower_id: current_account.id).map(&:following_id)
         following_ids << current_account.id

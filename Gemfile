@@ -27,7 +27,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'bootstrap-will_paginate', '~> 0.0.10'
+gem 'coffee-rails', '~> 5.0.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 #image upload to s3
@@ -40,7 +41,7 @@ gem "jquery-rails"
 gem 'mini_magick'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
+gem 'will_paginate', '~> 3.1.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>InstaDupe</title>
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track'=> true %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+<style>
+  .cursive{
+	  font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  </style>
+</head>
+
+  <body class="d-flex flex-column min-vh-100" >
+    <%= image_tag 'background.jpg', class: "img img-fluid", id: 'bg'%>
+
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+        <h1 class="mt-5 cursive" style="color: white; padding-bottom: 10px;">Welcome to <i class="fa fa-instagram"> </i> Sociogram</h1>
+        <%= yield %>
+	
+          
+        </div>
+      </div>
+    </div>
+    </div>
+   
+  </body>
+</html>
