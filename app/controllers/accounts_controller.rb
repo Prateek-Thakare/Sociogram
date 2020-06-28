@@ -46,6 +46,23 @@ class AccountsController < ApplicationController
         flash[:success] = "User unfollowed"
         redirect_back(fallback_location: root_path)
     end
+
+    def delete_post
+        post_account_id = params[:post_account_id].to_i
+        post_id = params[:post_id].to_i
+       
+        if post_account_id == current_account.id
+        
+            if !Like.where(post_id: post_id).empty?
+                Like.where(post_id: post_id).destroy_all 
+            end
+            if !Comment.where(post_id: post_id).empty? 
+                Comment.where(post_id: post_id).destroy_all
+            end
+            Post.where(id: post_id).destroy_all
+        end
+        redirect_to profile_path(current_account.username)
+    end
     
     private
     def set_account
