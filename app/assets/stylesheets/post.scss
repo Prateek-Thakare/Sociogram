@@ -142,7 +142,7 @@
 }
 
 .suggestions{
-    .recommended-follower:nth-child(n+6){
-        display: none;
-    }
+    height: 300px;
+    overflow: scroll;
+    scrollbar-width: none !important;
 }
