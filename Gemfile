@@ -32,7 +32,7 @@ gem 'coffee-rails', '~> 5.0.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 #image upload to s3
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'fog', '~> 1.37.0'
 gem 'omniauth-facebook'
 gem "font-awesome-rails"
